@@ -41,9 +41,11 @@ graph LR
   Indexer --> SI[(Search Index)]
   API --> SS[Search Service]
   SS --> SI
-  
   Queue --> DS[Delivery Service]
   DS --> Client
+
+### Component responsibilities
+* **Client** - displays messages and updates (edit/delete events)
 
 ### Component responsibilities
 
