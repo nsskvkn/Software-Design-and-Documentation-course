@@ -87,12 +87,12 @@ sequenceDiagram
 
 ### Explanation
 
-1. The user submits a search query within a specific conversation.
-2. The API forwards the request to the Search Service.
-3. The Search Service performs a full-text search in the Search Index.
-4. The Search Index returns matching message identifiers.
-5. The system retrieves full message records from the Database.
-6. Results are returned in paginated form.
+* The user submits a search query within a specific conversation.
+* The API forwards the request to the Search Service.
+* The Search Service performs a full-text search in the Search Index.
+* The Search Index returns matching message identifiers.
+* The system retrieves full message records from the Database.
+* Results are returned in paginated form.
 
 ---
 
@@ -124,7 +124,7 @@ Indexing is performed asynchronously to avoid blocking message delivery.
 ---
 
 ## Part 4 - RFC (Request for Comments)
-
+```markdown
 ## RFC: Message Search and Pagination Strategy
 
 ### Context
@@ -160,7 +160,7 @@ Direct full-text queries on the primary relational database degrade performance 
 ---
 
 ## Part 5 - ADR (Architecture Decision Record)
-
+```markdown
 ## ADR-003: Separate Search Index with Asynchronous Indexing
 
 ### Status
