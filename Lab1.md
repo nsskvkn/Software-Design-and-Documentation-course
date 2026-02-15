@@ -44,10 +44,8 @@ graph LR
   Queue --> DS[Delivery Service]
   DS --> Client
 
-### Component responsibilities
-* **Client** - displays messages and updates (edit/delete events)
 
-### Component responsibilities
+Component responsibilities
 
 * **Client** - displays message history and search results, sends pagination and search requests.
 * **Backend API** - entry point for sending messages, retrieving history, and performing search.
