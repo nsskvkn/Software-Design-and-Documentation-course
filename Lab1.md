@@ -31,28 +31,30 @@ A **component diagram** that shows the system architecture, responsibilities, an
 * Delivery mechanism (Queue / WebSocket / Push)
 
 
+
 ```mermaid
 graph LR
-  Client[Client] --> API[Backend API]
-  API --> MS[Message Service]
-  MS --> DB[(Primary SQL DB)]
-  MS --> Queue{Message Queue}
-  Queue --> Indexer[Indexer Service]
-  Indexer --> SI[(Search Index)]
-  API --> SS[Search Service]
-  SS --> SI
-  Queue --> DS[Delivery Service]
-  DS --> Client
+  Client --> API
+  API --> MessageService
+  API --> SearchService
+  MessageService --> DB["Messages DB"]
+  MessageService --> Queue
+  Queue --> DeliveryService
+  DeliveryService --> Client
+  MessageService --> SearchIndex["Search Index"]
+  SearchService --> SearchIndex
+```
 
+### Component Responsibilities
 
-###Component responsibilities
-* **Client** - displays message history and search results, sends pagination and search requests.
-* **Backend API** - entry point for sending messages, retrieving history, and performing search.
-* **Message Service** - stores and retrieves messages from the database.
-* **Search Service** - processes search queries and retrieves results from the search index.
-* **Database** - persistent storage of all messages.
-* **Search Index** - optimized full-text index for fast keyword search.
-* **Queue & Delivery Service** - asynchronously delivers messages to recipients.
+- **Client** - displays history, sends search queries, handles pagination.
+- **Backend API** - entry point for message sending, history retrieval and search.
+- **Message Service** - stores messages and retrieves paginated history.
+- **Search Service** - executes full-text queries and applies access control.
+- **Database** - persistent message storage.
+- **Search Index** - optimized full-text index.
+- **Queue** - asynchronous event processing.
+- **Delivery Service** - delivers messages to recipients.
 
 ---
 
