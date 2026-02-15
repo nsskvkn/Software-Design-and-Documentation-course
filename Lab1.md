@@ -45,8 +45,7 @@ graph LR
   DS --> Client
 
 
-Component responsibilities
-
+###Component responsibilities
 * **Client** - displays message history and search results, sends pagination and search requests.
 * **Backend API** - entry point for sending messages, retrieving history, and performing search.
 * **Message Service** - stores and retrieves messages from the database.
