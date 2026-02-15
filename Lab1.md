@@ -22,7 +22,6 @@ A **component diagram** that shows the system architecture, responsibilities, an
 * interactions between them.
 
 ### Required components
-
 * Client (Web / Mobile)
 * Backend API
 * Message Service
@@ -38,10 +37,8 @@ graph LR
   API --> MS[Message Service]
   MS --> DB[(Primary SQL DB)]
   MS --> Queue{Message Queue}
-  
   Queue --> Indexer[Indexer Service]
   Indexer --> SI[(Search Index)]
-  
   API --> SS[Search Service]
   SS --> SI
   
